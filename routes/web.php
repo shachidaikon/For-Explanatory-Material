@@ -27,5 +27,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/posts/{post}/edit', 'PostController@edit');
 });
 
+Route::get('/students', 'StudentController@index')->name('Students.index');
+Route::get('/students/create', 'StudentController@create')->name('Students.create');
+Route::post('/students', 'StudentController@store');
 
 Route::get('/home', 'HomeController@index')->name('home');

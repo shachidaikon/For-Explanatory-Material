@@ -14,7 +14,7 @@
     <body>
         <h1>Blog Name</h1>
         <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
-        <form action="/posts/{{$post->id}}" id="form_delete", method="post" style="display:inline">
+        <form action="/posts/{{$post->id}}" id="form_delete" method="post" style="display:inline">
             @csrf
             @method('DELETE')
             <button class="delete" type="button" onclick="return deletePost(this);">delete</button>
@@ -22,7 +22,7 @@
         <div class="post">
             
             <h2 class='title'>{{ $post->title }}</h2>
-            <small class="text-muted pt-1 mb-0">{{ $post->user->name }}</small>
+            
             <p>{{ $post->body }}</p>    
             <p class='updated_at'>{{$post->updated_at}}</p>
         </div>
